@@ -45,6 +45,25 @@ class ProductController {
         $mysqli->close();
     }
 
+    public function saveProduct($id, $nombre,$marca, $precio, $cantidad,$fecha) {
+        if ($id<0){
+            $db = new Database();
+            // sql para update
+            $sql ="UPDATE tabla301127A_954 SET name='".$nombre."', mark = '".$marca."', price = '".$precio."', quantity = '".$cantidad."' WHERE id=".$id."";
+            
+
+            if ($db->conn->query($sql) === true) {
+                return "ok";
+            } else {
+                return "Error: " . $db->conn->error;
+            }
+
+            $db->conn->close();
+        }else{
+            return "error";
+        }
+    }
+
     
 
     public function deleteProduct($id) {

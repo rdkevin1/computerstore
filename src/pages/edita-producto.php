@@ -6,7 +6,7 @@ if (isset($_GET['id'])){
     $producto= new ProductController();
     $resultado = $producto->getProduct($id);
     
-    if($resultado->name){
+ 
         ?>
 
 <!DOCTYPE html>
@@ -71,7 +71,7 @@ if (isset($_GET['id'])){
                 </div>
                 
                 <div class="container mt-5">
-                    <form action="editar.php" method="post" id="frm">
+                    <form action="" method="post" id="frm">
                         <div class="mb-3">
                             <input type="hidden" name="idp" id="idp" value="<?php echo $resultado->id; ?>">
                         </div>
@@ -96,7 +96,7 @@ if (isset($_GET['id'])){
                             <input type="text" class="form-control" id="cantidad" value="<?php echo $resultado->quantity; ?>">
                         </div>
                         <div class="mb-3">
-                            <input type="submit" class="btn btn-primary" value="Guardar">
+                            <input type="submit" class="btn btn-primary" id="registrar" value="Guardar">
                         </div>
 
                     </form>
@@ -109,15 +109,52 @@ if (isset($_GET['id'])){
 
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+<script>
+registrar.addEventListener("click", () => {
+    console.log(new FormData(frm));
+    alert("dfdf");
+    fetch("guardar.php", {
+        method: "POST",
+        body: new FormData(frm)
+    }).then(response => response.json()).then(response => {
+        console.log(response);
+        idp.value = response.id;
+        nombre.value = response.nombre;
+        marca.value = response.marca;
+        precio.value = response.precio;
+        cantidad.value = response.cantidad;
+        registrar.value = "Actualizar"
+    })
 
 
+    /*fetch("registrar.php", {
+        method: "POST",
+        body: new FormData(frm)
+    }).then(response => response.text()).then(response => {
+        
+        if (response == "ok") {
+            Swal.fire({
+                icon: 'success',
+                title: 'Registrado',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            frm.reset();
+            ListarProductos();
+        }
+    })*/
+});
+    function Editar(id) {
+
+    
+}
+</script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 </html>
 
 <?php
     
-    }else{
-        echo "no se encotró el elemento enviado";
-    }
+ 
 }
 
 ?>
