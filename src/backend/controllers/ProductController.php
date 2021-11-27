@@ -22,7 +22,7 @@ class ProductController {
     public function listProduct($buscar="") {
         $mysqli = new mysqli("localhost", "root", "", "bdunad301127A_954");
         if ($buscar){
-            $query = "SELECT * FROM tabla301127A_954 WHERE name LIKE '%$buscar%'ORDER BY id DESC";
+            $query = "SELECT * FROM tabla301127A_954 WHERE name LIKE '%$buscar%' OR id LIKE '%$buscar%' ORDER BY id DESC";
         }else{
             $query = "SELECT * FROM tabla301127A_954 ORDER BY id DESC";
         }

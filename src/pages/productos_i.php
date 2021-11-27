@@ -56,7 +56,8 @@
 
                 <div class="container mt-5">
                     <a href="agrega-producto.php" class="btn btn-primary">Registrar un producto</a>
-                    <h1>Código de producto</h1>
+                    <h1>Inventario</h1>
+                    <p>Buscar por nombre o id de producto</p>
                     <input type="text" name="buscar" id="buscar" class="form-control my-2">
                     <!--<button class="btn btn-info mb-2" id="boton">Buscar</button>-->
                 </div>
@@ -145,10 +146,10 @@
 
 <script>
     ListarProductos();
-    function ListarProductos(busqueda) {
+    function ListarProductos(busq) {
         fetch("listar.php", {
             method: "POST",
-            body: busqueda
+            body: busq
         }).then(response => response.text()).then(response => {
             resultado.innerHTML = response;
         })
