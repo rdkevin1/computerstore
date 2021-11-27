@@ -32,8 +32,10 @@ class ProductController {
     public function getProduct($id) {
         $mysqli = new mysqli("localhost", "root", "", "bdunad301127A_954");
         $query = "SELECT * FROM tabla301127A_954 WHERE id='".$id."'"; 
+        
         if ($resultado = $mysqli->query($query)) {
-           return $resultado;
+            return $resultado->fetch_object();
+
         }             
         $mysqli->close();
     }
@@ -42,9 +44,11 @@ class ProductController {
 
     public function deleteProduct($id) {
         $mysqli = new mysqli("localhost", "root", "", "bdunad301127A_954");
-        $query = "SELECT * FROM tabla301127A_954 WHERE id=".$id.""; 
+        $query = "DELETE FROM tabla301127A_954 WHERE id=".$id.""; 
         if ($resultado = $mysqli->query($query)) {
-           return $resultado;
+           return "ok";
+        }else{
+            return "error";
         }             
         $mysqli->close();
     }

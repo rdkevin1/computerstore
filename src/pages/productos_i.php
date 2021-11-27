@@ -155,49 +155,6 @@
         })
     }
 
-    registrar.addEventListener("click", () => {
-        
-        fetch("insert.php", {
-            method: "POST",
-            body: new FormData(frm)
-        }).then(response => response.text()).then(response => {
-            alert(frm);
-            if (response == "ok") {
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Registrado',
-                    showConfirmButton: false,
-                    timer: 1500
-                })
-                frm.reset();
-                ListarProductos();
-
-            }else{
-                if (response == "modificado") {
-                    Swal.fire({
-                        icon: 'success',
-                        title: 'Modificado',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                    registrar.value = "Registrar";
-                    idp.value = "";
-                    ListarProductos();
-                    frm.reset();
-
-                }else{
-                    Swal.fire({
-                        icon: 'error',
-                        title: 'Error al crear el producto',
-                        showConfirmButton: false,
-                        timer: 1500
-                    })
-                }
-            }
-        })
-    });
-
-
 function Eliminar(id) {
     Swal.fire({
         title: 'Esta seguro de eliminar?',
@@ -208,11 +165,14 @@ function Eliminar(id) {
         confirmButtonText: 'Si!',
         cancelButtonText: 'NO'
     }).then((result) => {
+        console.log(result.isConfirmed="true");
         if (result.isConfirmed) {
+            console.log("fetch a eliminar id: "+id);
             fetch("eliminar.php", {
                 method: "POST",
                 body: id
             }).then(response => response.text()).then(response => {
+                console.log(response);
                 if (response == "ok") {
                    ListarProductos();
                    Swal.fire({
@@ -221,6 +181,13 @@ function Eliminar(id) {
                        showConfirmButton: false,
                        timer: 1500
                    })
+                }else{
+                    /*Swal.fire({
+                       icon: 'error',
+                       title: 'No se pudo eliminar o no existe en la base de datos',
+                       showConfirmButton: false,
+                       timer: 1500
+                   })*/
                 }
                 
             })

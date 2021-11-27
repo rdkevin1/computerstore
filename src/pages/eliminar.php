@@ -1,11 +1,13 @@
 <?php
-//insertar y editar productos
+//eliminar producto
 require_once "../backend/config/Database.php";
 require_once "../backend/controllers/ProductController.php";
-if (isset($_GET['id'])){
-    $id = $_GET['id'];
+$id = file_get_contents("php://input");
+if (isset($id)){
     $producto= new ProductController();
-    $resultado = $producto->getProduct($id);
+    $resultado = $producto->deleteProduct($id);
     echo "ok";
+}else{
+    echo "error";
 }
 ?>
