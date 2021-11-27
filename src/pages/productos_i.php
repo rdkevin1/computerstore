@@ -51,15 +51,14 @@
                 
                 </ul>
             </div>
-            <!--Contains the main content
-                    of the webpage-->
+            <!--Contains the main content of the webpage-->
             <div class="col-8" style="text-align: justify;">
 
                 <div class="container mt-5">
-                    <a href="agrega-producto.php" class="btn btn-primary">Agregar</a>
+                    <a href="agrega-producto.php" class="btn btn-primary">Registrar un producto</a>
                     <h1>Código de producto</h1>
-                    <input type="text" id="formulario" class="form-control my-2">
-                    <button class="btn btn-info mb-2" id="boton">Buscar</button>
+                    <input type="text" name="buscar" id="buscar" class="form-control my-2">
+                    <!--<button class="btn btn-info mb-2" id="boton">Buscar</button>-->
                 </div>
                 <div class="modal fade" id="mimodal" tabindex="-1" aria-hidden="true" aria-labelledby="modalTitle">
                     <div class="modal-dialog">
@@ -196,14 +195,14 @@ function Eliminar(id) {
     })
 }
 
-/*buscar.addEventListener("keyup", () => {
+buscar.addEventListener("keyup", () => {
     const valor = buscar.value;
     if (valor == "") {
         ListarProductos();
     }else{
         ListarProductos(valor);
     }
-});*/
+});
 
     </script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>

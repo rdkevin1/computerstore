@@ -1,9 +1,11 @@
 <?php
 //Listar
+$buscar="";
+$buscar = file_get_contents("php://input");
 require_once "../backend/config/Database.php";
 require_once "../backend/controllers/ProductController.php";
 $producto= new ProductController();
-$resultado = $producto->listProduct();
+$resultado = $producto->listProduct($buscar);
 
 foreach ($resultado as $data) {
     echo "<tr>

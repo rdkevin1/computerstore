@@ -19,9 +19,14 @@ class ProductController {
         $db->conn->close();
     }
 
-    public function listProduct() {
+    public function listProduct($buscar="") {
         $mysqli = new mysqli("localhost", "root", "", "bdunad301127A_954");
-        $query = "SELECT * FROM tabla301127A_954 ORDER BY id DESC"; 
+        if ($buscar){
+            $query = "SELECT * FROM tabla301127A_954 WHERE name LIKE '%$buscar%'ORDER BY id DESC";
+        }else{
+            $query = "SELECT * FROM tabla301127A_954 ORDER BY id DESC";
+        }
+         
         $resultado = $mysqli->query($query);
         if ($resultado) {
            return $resultado;
