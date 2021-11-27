@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/styles.css">
-    <title>inventario</title>
+    <title>Inventario - Todos los productos</title>
 </head>
 
 <body>
@@ -18,8 +18,8 @@
             <!-- sidebar -->
             <div class="d-flex flex-column flex-shrink-0 p-3 text-white" style="width: 280px; background-color: #343A40;">
                 <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item">
-                        <a href="../../index.html" class="nav-link text-white" aria-current="page">
+                    <!--<li class="nav-item">
+                        <a href="./index.html" class="nav-link text-white" aria-current="page">
                             <i class="fa fa-home mx-3" aria-hidden="true"></i>Home
                         </a>
                     </li>
@@ -27,22 +27,28 @@
                         <a href="#" class="nav-link text-white">
                             <i class="fa fa-user mx-3" aria-hidden="true"></i>Administración
                         </a>
-                    </li>
+                    </li>-->
                     <li>
-                        <a href="#" class="nav-link text-white">
-                            <i class="fa fa-shopping-cart mx-3" aria-hidden="tr ue"></i>Productos
+                        <a href="productos_i.php" class="nav-link text-white">
+                            <i class="fa fa-shopping-cart mx-3" aria-hidden="true"></i>Inventario (select)
                         </a>
                     </li>
                     <li>
+                        <a href="agrega-producto.php" class="nav-link text-white">
+                            <i class="fa fa-shopping-cart mx-3" aria-hidden="true"></i>Registrar producto (insert)
+                        </a>
+                    </li>
+                    <!--<li>
                         <a href="#" class="nav-link text-white">
                             <i class="fa fa-bell mx-3" aria-hidden="true"></i>Servicios
                         </a>
                     </li>
                     <li>
-                        <a href="./utilities.html" class="nav-link text-white">
+                        <a href="./src/pages/utilities.html" class="nav-link text-white">
                             <i class="fa fa-anchor mx-3" aria-hidden="true"></i>Utilidades
                         </a>
-                    </li>
+                    </li>-->
+                
                 </ul>
             </div>
             <!--Contains the main content
@@ -50,7 +56,7 @@
             <div class="col-8" style="text-align: justify;">
 
                 <div class="container mt-5">
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#mimodal">Agregar</button>
+                    <a href="agrega-producto.php" class="btn btn-primary">Agregar</a>
                     <h1>Código de producto</h1>
                     <input type="text" id="formulario" class="form-control my-2">
                     <button class="btn btn-info mb-2" id="boton">Buscar</button>

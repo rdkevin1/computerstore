@@ -39,10 +39,10 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="./src/pages/productos_i.html">Inventario</a>
+                        <a class="nav-link text-white" href="./src/pages/productos_i.php">Inventario</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="./src/pages/utilities.html">Utilidades</a>
+                        <a class="nav-link text-white" href="./src/pages/agrega-producto.php">Registrar producto</a>
                     </li>
                 </ul>
             </div>
@@ -55,7 +55,7 @@
             <div class="d-flex flex-column flex-shrink-0 p-3 text-white"
                 style="width: 280px; background-color: #343A40;">
                 <ul class="nav nav-pills flex-column mb-auto">
-                    <li class="nav-item">
+                    <!--<li class="nav-item">
                         <a href="./index.html" class="nav-link text-white" aria-current="page">
                             <i class="fa fa-home mx-3" aria-hidden="true"></i>Home
                         </a>
@@ -64,13 +64,18 @@
                         <a href="#" class="nav-link text-white">
                             <i class="fa fa-user mx-3" aria-hidden="true"></i>Administración
                         </a>
-                    </li>
+                    </li>-->
                     <li>
-                        <a href="#" class="nav-link text-white">
-                            <i class="fa fa-shopping-cart mx-3" aria-hidden="true"></i>Productos
+                        <a href="./src/pages/productos_i.php" class="nav-link text-white">
+                            <i class="fa fa-shopping-cart mx-3" aria-hidden="true"></i>Inventario (select)
                         </a>
                     </li>
                     <li>
+                        <a href="./src/pages/agrega-producto.php" class="nav-link text-white">
+                            <i class="fa fa-shopping-cart mx-3" aria-hidden="true"></i>Registrar producto (insert)
+                        </a>
+                    </li>
+                    <!--<li>
                         <a href="#" class="nav-link text-white">
                             <i class="fa fa-bell mx-3" aria-hidden="true"></i>Servicios
                         </a>
@@ -79,16 +84,28 @@
                         <a href="./src/pages/utilities.html" class="nav-link text-white">
                             <i class="fa fa-anchor mx-3" aria-hidden="true"></i>Utilidades
                         </a>
-                    </li>
+                    </li>-->
                 </ul>
             </div>
             <!--Contains the main content
                     of the webpage-->
             <div class="col-8" style="text-align: justify;">
                 <div class="mt-5">
-                    <h2>Tabla de usuarios</h2>
+                    <h2>Opciones</h2>
                     <p>Esta tabla contiene la relación de usuarios con acceso al aplicativo web:</p>
-                    <table class="table table-success table-striped">
+                    <ul>
+                        <li>
+                            <a href="./src/pages/productos_i.php" class="nav-link">
+                                <i class="fa fa-shopping-cart mx-3" aria-hidden="true"></i>Inventario (select)
+                            </a>
+                        </li>
+                        <li>
+                            <a href="./src/pages/agrega-producto.php" class="nav-link">
+                                <i class="fa fa-shopping-cart mx-3" aria-hidden="true"></i>Registrar producto (insert)
+                            </a>
+                        </li>
+                    </ul>
+                    <!--<table class="table table-success table-striped">
                         <thead>
                             <tr>
                                 <th>Nombre</th>
@@ -113,7 +130,7 @@
                                 <td>july@example.com</td>
                             </tr>
                         </tbody>
-                    </table>
+                    </table>-->
                 </div>
             </div>
         </div>

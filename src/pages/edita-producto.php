@@ -60,10 +60,7 @@ if (isset($_GET['id'])){
             <div class="col-8" style="text-align: justify;">
 
                 
-                <?php
-                    var_dump($resultado);
-                ?>
-
+                
                 <div class="container mt-5">
                     <form action="" method="post" id="frm">
                         <div class="mb-3">

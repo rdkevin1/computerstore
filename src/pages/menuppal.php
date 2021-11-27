@@ -26,7 +26,7 @@
                         <a class="nav-link text-white" href="./productos_i.php">Inventario</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link text-white" href="./utilities.html">Utilidades</a>
+                        <a class="nav-link text-white" href="./agrega-producto.php">Registrar producto</a>
                     </li>
                 </ul>
             </div>
