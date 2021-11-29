@@ -1,6 +1,7 @@
 <?php
 
-class Database {
+class Database
+{
     protected $host = "localhost";
     protected $user = "root";
     protected $password = "";
@@ -8,7 +9,8 @@ class Database {
 
     public $conn = null;
 
-    public function __construct($db = "bdunad301127A_954") {
+    public function __construct($db = "bdunad301127A_954")
+    {
 
         //Set db to connect
         $this->db = $db;
@@ -26,5 +28,3 @@ class Database {
         }
     }
 }
-
-?>
